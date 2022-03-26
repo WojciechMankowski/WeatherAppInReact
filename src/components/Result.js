@@ -3,17 +3,17 @@ import { ThermometerHalf, Wind, Sunrise, Sunset } from "react-bootstrap-icons";
 import Animacja from "./Animacja/Animaca";
 
 const Result = ({ data, error, city }) => {
-  let conntent = null;
   let name = "temp cold";
   if (data.temp > 20) {
     name = "temp hot";
   }
-
+ 
   return (
-    <div className="col-10 resultat">
-      <Animacja />
-      <div className="inf">
-        <p className="heard">Pogoda w dniu {data.data}</p>
+    <div className="resultat">
+      <h3>
+        Pogoda w {data.city} w dniu {data.data}
+      </h3>
+      <div >
         <span className="sunrise">
           <Sunrise />
           {` ${data.sunrise} `}

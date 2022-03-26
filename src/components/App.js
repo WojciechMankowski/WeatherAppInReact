@@ -58,8 +58,10 @@ class App extends React.Component {
   ConnectAPI = async (namecity) => {
     const API_key = "599076ae1ed26c6c1cb2c6a3759db846";
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${namecity}&appid=${API_key}&units=metric`;
-    const res = await axios.get(URL);
-    this.setData(res.data);
+    axios.get(URL)
+    .then(res => this.setData(res.data))
+    .catch(error => this.setState({data_wether: error}))
+    
   };
   render() {
     if (this.state.city === "") {
@@ -67,8 +69,18 @@ class App extends React.Component {
         <div className="container">
           <h1>POGODA W TWOIM MIEŚCIE</h1>
           <Form setNameCity={this.setNameCity} ConnectAPI={this.ConnectAPI} />
+         
         </div>
       )
+    }
+    else if (this.state.data_wether.isAxiosError) {
+      return (
+        <div className="container">
+      <h1>POGODA W TWOIM MIEŚCIE</h1>
+      <Form setNameCity={this.setNameCity} ConnectAPI={this.ConnectAPI} />
+      <p>Podano błędne miasto</p>
+      
+    </div>)
     }
     else{
         return (
