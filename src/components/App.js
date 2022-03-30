@@ -39,57 +39,52 @@ class App extends React.Component {
     };
     this.setState({ data_wether: weather });
   };
-  componentDidUpdate() {
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition((position) => {
       this.setState({
         lat: position.coords.latitude,
         lot: position.coords.longitude,
       });
     });
-    if (this.state.lat === null) {
-      console.log();
-    } else {
+    if (this.state.lat !== null) {
       const API_key = "599076ae1ed26c6c1cb2c6a3759db846";
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${this.state.lat}&lon=${this.state.lot}&appid=${API_key}&units=metric`;
-      //   axios.get(url).then((result) => this.setData(result));
+      axios.get(url).then((result) => this.setData(result));
     }
   }
 
   ConnectAPI = async (namecity) => {
     const API_key = "599076ae1ed26c6c1cb2c6a3759db846";
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${namecity}&appid=${API_key}&units=metric`;
-    axios.get(URL)
-    .then(res => this.setData(res.data))
-    .catch(error => this.setState({data_wether: error}))
-    
+    axios
+      .get(URL)
+      .then((res) => this.setData(res.data))
+      .catch((error) => this.setState({ data_wether: error }));
   };
   render() {
-    if (this.state.city === "") {
+    if (this.state.city === "" || this.state.lat !== null) {
       return (
         <div className="container">
           <h1>POGODA W TWOIM MIEŚCIE</h1>
           <Form setNameCity={this.setNameCity} ConnectAPI={this.ConnectAPI} />
-         
         </div>
-      )
-    }
-    else if (this.state.data_wether.isAxiosError) {
+      );
+    } else if (this.state.data_wether.isAxiosError) {
       return (
         <div className="container">
-      <h1>POGODA W TWOIM MIEŚCIE</h1>
-      <Form setNameCity={this.setNameCity} ConnectAPI={this.ConnectAPI} />
-      <p>Podano błędne miasto</p>
-      
-    </div>)
-    }
-    else{
-        return (
-            <div className="container">
-              <h1>POGODA W TWOIM MIEŚCIE</h1>
-              <Form setNameCity={this.setNameCity} ConnectAPI={this.ConnectAPI} />
-              <Result data={this.state.data_wether}/>
-            </div>
-          );
+          <h1>POGODA W TWOIM MIEŚCIE</h1>
+          <Form setNameCity={this.setNameCity} ConnectAPI={this.ConnectAPI} />
+          <p>Podano błędne miasto</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="container">
+          <h1>POGODA W TWOIM MIEŚCIE</h1>
+          <Form setNameCity={this.setNameCity} ConnectAPI={this.ConnectAPI} />
+          <Result data={this.state.data_wether} />
+        </div>
+      );
     }
   }
 }
