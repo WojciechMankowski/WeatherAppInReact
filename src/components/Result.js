@@ -1,5 +1,5 @@
 import React from "react";
-import { ThermometerHalf, Wind, Sunrise, Sunset } from "react-bootstrap-icons";
+import { Wind} from "react-bootstrap-icons";
 import Temperatura from "./Temperature";
 import Header from "./Header";
 const Result = ({ data, error, city }) => {

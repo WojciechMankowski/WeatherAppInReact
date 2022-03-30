@@ -3,7 +3,7 @@ const Header = ({ sunrise, sunset, data, city }) => {
   return (
     <div>
       <h3>{city}</h3>
-      <span>{data}</span>
+      <span>Teraz {data}</span><br/>
       <span className="sunrise">
           {" "}
         <Sunrise /> {sunrise}
