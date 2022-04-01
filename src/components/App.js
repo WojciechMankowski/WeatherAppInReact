@@ -61,8 +61,9 @@ class App extends React.Component {
       .then((res) => this.setData(res.data))
       .catch((error) => this.setState({ data_wether: error }));
   };
+  
   render() {
-    if (this.state.city === "" || this.state.lat !== null) {
+    if (this.state.city === "") {
       return (
         <div className="container">
           <h1>POGODA W TWOIM MIEŚCIE</h1>

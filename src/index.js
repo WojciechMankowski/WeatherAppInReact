@@ -13,7 +13,7 @@ const Index = () => {
       navbar-expand-lg 
       navbar-light 
       bg-secondary 
-      text-center    "
+      text-center"
       >
         <Menu />
       </nav>

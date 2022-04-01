@@ -3,6 +3,7 @@ body {
   padding: 0;
   width: 100%;
   font-size: 24px;
+  background-color: #c8c8c8;
 }
 
 .container {
@@ -70,23 +71,42 @@ main span {
 }
 
 .cold svg {
-  color: #30618C;
+  color: #30618c;
 }
 
 .hot svg {
-  color: #D97218;
+  color: #d97218;
 }
 
 .sunset svg {
-  color: #D9526B;
+  color: #d9526b;
 }
 
 .sunrise svg {
-  color: #F29F05;
+  color: #f29f05;
 }
 
 .background {
   width: 100%;
   height: 55px;
-  background-color: #D9526B;
+  background-color: #d9526b;
+}
+
+#weather {
+  text-align: center;
+  height: 200px;
+}
+
+#weather {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin-bottom: 5px;
+}
+
+#city {
+  border: #b5aab5 solid 2px;
+  border-radius: 5px;
+  align-self: center;
+  margin-bottom: 5px;
 }
