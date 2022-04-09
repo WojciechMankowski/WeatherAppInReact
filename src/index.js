@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
-import Capitals from "./Capitals";
+import Capitals from "./components/Capitals"
 import Menu from "./components/Menu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -11,8 +11,7 @@ const Index = () => {
       <nav
         className="navbar 
       navbar-expand-lg 
-      navbar-light 
-      bg-secondary 
+      bg-warning text-dark
       text-center"
       >
         <Menu />

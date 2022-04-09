@@ -5,7 +5,7 @@ body {
   padding: 0;
   width: 100%;
   font-size: $fonsize;
-  background-color: rgb(200, 200, 200);
+  background-color: #bdaf85;
 }
 .container {
   width: 80%;
@@ -100,4 +100,14 @@ main span {
   align-self: center;
   margin-bottom: 5px;
   // text-align: ;
+}
+input {
+  background-color: rgb(181, 170, 181);
+  align-self: center;
+  margin-bottom: 5px;
+  // text-align: ;
+}
+#img {
+  width: 100px;
+  height: 100px;
 }

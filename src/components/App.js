@@ -18,7 +18,7 @@ class App extends React.Component {
     });
   };
   setData = (data) => {
-    const date = new Date().toLocaleDateString();
+    const date = new Date().toLocaleTimeString();
     const sunrise_data = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
     const sunset_data = new Date(data.sys.sunset * 1000).toLocaleTimeString();
     const main_data = data.main;
@@ -61,7 +61,7 @@ class App extends React.Component {
       .then((res) => this.setData(res.data))
       .catch((error) => this.setState({ data_wether: error }));
   };
-  
+
   render() {
     if (this.state.city === "") {
       return (
