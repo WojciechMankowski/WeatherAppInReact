@@ -7,7 +7,7 @@ import "../Style/style.scss";
 
 class App extends React.Component {
   state = {
-    city: "",
+    city: "Gdańsk",
     lat: null,
     lot: null,
     data_wether: {},
