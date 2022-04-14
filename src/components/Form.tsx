@@ -1,17 +1,16 @@
 import React from "react";
+import { Component } from "react";
 
-
-class Form extends React.Component {
+class Form extends Component<{ setNameCity: Function; ConnectAPI: Function }> {
   state = {
     city: "",
   };
-  onFormSumbint = (event) => {
-      console.log(typeof this.props)
-    event.preventDefault()
-    // this.props.setNameCity(this.state.city)
-}
+  onFormSumbint = (event: any) => {
+    event.preventDefault();
+    this.props.setNameCity(this.state.city);
+  };
   render() {
-    const entry = (event) => {
+    const entry = (event: any) => {
       this.setState({ city: event.target.value });
     };
     return (
@@ -24,11 +23,14 @@ class Form extends React.Component {
           onChange={entry}
           value={this.state.city}
         />
-        <input className="btn bg-warning text-dark"
+        <input
+          className="btn bg-warning text-dark"
           onClick={() => {
             this.props.ConnectAPI(this.state.city);
-          }} type="submit"  value="Szukaj"/>
-       
+          }}
+          type="submit"
+          value="Szukaj"
+        />
       </form>
     );
   }

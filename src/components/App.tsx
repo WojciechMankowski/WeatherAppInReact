@@ -4,6 +4,7 @@ import Result from "./Result";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "../Style/style.scss";
+import Data from "../Helpers/TypData"
 
 class App extends React.Component {
   state = {
@@ -12,12 +13,13 @@ class App extends React.Component {
     lot: null,
     data_wether: {},
   };
-  setNameCity = (namecity) => {
+  setNameCity = (namecity: string) => {
     this.setState({
       city: namecity,
     });
   };
-  setData = (data) => {
+  setData = (data: Data) => {
+    console.log(data);
     const date = new Date().toLocaleTimeString();
     const sunrise_data = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
     const sunset_data = new Date(data.sys.sunset * 1000).toLocaleTimeString();
@@ -53,7 +55,7 @@ class App extends React.Component {
     }
   }
 
-  ConnectAPI = async (namecity) => {
+  ConnectAPI = async (namecity: string) => {
     const API_key = "599076ae1ed26c6c1cb2c6a3759db846";
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${namecity}&appid=${API_key}&units=metric`;
     axios

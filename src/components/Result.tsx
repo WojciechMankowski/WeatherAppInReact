@@ -2,7 +2,11 @@ import React from "react";
 import { Wind} from "react-bootstrap-icons";
 import Temperatura from "./Temperature";
 import Header from "./Header";
-const Result = ({ data, error, city }) => {
+import Data from "../Helpers/TypData"
+import weather from "../Helpers/TypeWeaher";
+const Result = (props: {data: weather}) => {
+  const data: weather = props.data;
+  console.log(typeof data.data)
   return (
     <div className="resultat">
       <Header
