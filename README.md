@@ -1,5 +1,7 @@
 # The weather app in React
 
+![page preview](./page%20preview.gif)
+
 ## About the project
 The aim of the project is to display the weather for a specific city and for the capitals of Europe. This is a hands-on project to practice writing applications in React and TypeScipt.
 
