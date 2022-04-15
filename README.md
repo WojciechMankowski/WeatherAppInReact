@@ -1,13 +1,16 @@
-# Aplikacja pogodowa w React
+# The weather app in React
 
-## Technologia użyta w projekcie:
+## About the project
+The aim of the project is to display the weather for a specific city and for the capitals of Europe. This is a hands-on project to practice writing applications in React and TypeScipt.
+
+## Technology used in the project:
 
 - React
 - HTML5
 - SASS
 - TypeScript
 
-### Użyte bibloteki
+### Libraries used
 
 - axios
 - react-router-dom
@@ -15,8 +18,8 @@
 - react-bootstrap-icons
 - sass
 
-## Rozpoczęście pracy
-1. Najpierw trzeba zaistalować pakiety tym poleceniem `npm install`
-2. Po zainstalowaniu trzeba wykonać to polecenie `npm start`
-3. Teraz przejść pod adres: [http://localhost:3000/](http://localhost:3000/)
+## Getting started
+1. First you need to install packages with this `npm install` command
+2. Once installed, you need to execute this command `npm start`
+3. Now go to the following address: [http://localhost:3000] (http://localhost:3000)
 
