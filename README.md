@@ -2,10 +2,10 @@
 
 ## Technologia użyta w projekcie:
 
-*React
-*HTML5
-*SASS
-*TypeScript
+-React
+-HTML5
+-SASS
+-TypeScript
 
 ### Użyte bibloteki
 
