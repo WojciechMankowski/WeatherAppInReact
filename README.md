@@ -12,6 +12,10 @@ The aim of the project is to display the weather for a specific city and for the
 - SASS
 - TypeScript
 
+## Advanced topics used in the project
+1. Routers -> using library react-router-dom 
+2. Adding TypeScript to the project
+
 ### Libraries used
 
 - axios
