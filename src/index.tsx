@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import Capitals from "./components/Capitals";
-import Menu from "./components/Menu"
+import Menu from "./components/Menu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Index = () => {

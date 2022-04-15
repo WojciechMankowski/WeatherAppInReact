@@ -1,19 +1,19 @@
 import React from "react";
 import { ThermometerHalf } from "react-bootstrap-icons";
 
-const Temperatura = ({ temp, name }) => {
+const Temperatura = (props: { temp: number, name: string }) => {
   let name_class = "temp cold";
-  if (temp > 20) {
+  if (props.temp > 20) {
     name_class = "temp hot";
   }
-  if (name === "") {
+  if (props.name === "") {
     return (
       <span className={name_class}>
-        <ThermometerHalf /> {temp + " \xB0C"}{" "}
+        <ThermometerHalf /> {props.temp + " \xB0C"}{" "}
       </span>
     );
   } else {
-    return <span className={name_class}>{name + temp + " \xB0C"} </span>;
+    return <span className={name_class}>{props.name + props.temp + " \xB0C"} </span>;
   }
 };
 

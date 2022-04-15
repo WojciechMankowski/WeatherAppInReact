@@ -4,22 +4,48 @@ import Result from "./Result";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "../Style/style.scss";
-import Data from "../Helpers/TypData"
+import Data from "../Helpers/TypData";
+import weather from "../Helpers/TypeWeaher";
 
-class App extends React.Component {
-  state = {
-    city: "",
-    lat: null,
-    lot: null,
-    data_wether: {},
-  };
+type TypProps = {};
+type TypeState = {
+  city: string;
+  lat: number;
+  lot: number;
+  data_wether: weather;
+};
+class App extends React.Component<TypProps, TypeState> {
+  constructor(props: TypProps) {
+    super(props);
+    this.state = {
+      city: "",
+      lat: 0,
+      lot: 0,
+      data_wether: {
+        city: "",
+        data: "",
+        icon: "",
+        sunrise: "0",
+        sunset: "0",
+        temp: 0,
+        feels_like_temp: 0,
+        temp_max: 0,
+        temp_min: 0,
+        humidity: 0,
+        pressure: 0,
+        windy_speed: "0",
+        isAxiosError: null
+      },
+    };
+  }
+
   setNameCity = (namecity: string) => {
     this.setState({
       city: namecity,
     });
   };
-  setData = (data: Data) => {
-    console.log(data);
+  setData = (data: any) => {
+    console.log(typeof data);
     const date = new Date().toLocaleTimeString();
     const sunrise_data = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
     const sunset_data = new Date(data.sys.sunset * 1000).toLocaleTimeString();
@@ -38,6 +64,7 @@ class App extends React.Component {
       humidity: main_data.humidity,
       pressure: main_data.pressure,
       windy_speed: data.wind.speed,
+      isAxiosError: null
     };
     this.setState({ data_wether: weather });
   };

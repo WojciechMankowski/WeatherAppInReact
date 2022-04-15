@@ -1,32 +1,14 @@
-
-    "weather": [
-        {
-            "id": int;
-            "main": string;
-            "description": string;
-            "icon": string
-        }
-    ];
-    "main": {
-        "temp": floar;
-        "feels_like": floar;
-        "temp_min": floar;
-        "temp_max": floar;
-        "pressure": floar;
-        "humidity": floar
-    };
-    "wind": {
-        "speed": floar;
-        "deg": floar
-    };
-    "clouds": {
-        "all": 0
-    };
-    "sys": {
-        "type": int;
-        "id": int;
-        "country": string;
-        "sunrise": int;
-        "sunset": int
-    };
-}
+type weather = {
+  city: "",
+  data: "",
+  icon: "",
+  sunrise: 0,
+  sunset: 0,
+  temp: 0,
+  feels_like_temp: 0,
+  temp_max: 0,
+  temp_min: 0,
+  humidity: 0,
+  pressure: 0,
+  windy_speed: 0,
+},

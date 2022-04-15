@@ -1,6 +1,6 @@
 import React from "react";
 import { Wind} from "react-bootstrap-icons";
-import Temperatura from "./Temperature";
+import Temperatura from "./Temperatura";
 import Header from "./Header";
 import Data from "../Helpers/TypData"
 import weather from "../Helpers/TypeWeaher";

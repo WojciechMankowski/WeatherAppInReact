@@ -1,16 +1,19 @@
 import {Sunrise, Sunset } from "react-bootstrap-icons";
-const Header = ({ sunrise, sunset, data, city }) => {
+
+type PropsTyp = { sunrise: string, sunset: string, data: string, city: string }
+
+const Header = (props: PropsTyp) => {
   return (
     <div>
-      <h3>{city}</h3>
-      <span>Teraz {data}</span><br/>
+      <h3>{props.city}</h3>
+      <span>Teraz {props.data}</span><br/>
       <span className="sunrise">
           {" "}
-        <Sunrise /> {sunrise}
+        <Sunrise /> {props.sunrise}
       </span>
       <span className="sunset">
       {" "}
-        <Sunset /> {` ${sunset}`}
+        <Sunset /> {` ${props.sunset}`}
       </span>
     </div>
   );

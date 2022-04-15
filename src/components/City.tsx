@@ -3,16 +3,18 @@ import { useState } from "react";
 import DataCity from "./CityData";
 import IMG from "./imag";
 
-const City = ({ city }) => {
+type TypeProps = {city: string}
+
+const City = (props: TypeProps) => {
   const [img, setimg] = useState("");
-  const setIMG = (img) => {
+  const setIMG = (img: string) => {
     setimg(img);
   };
   return (
     <div>
-      <div key={city} className="col-sm" id="city">
-        <span>{city}</span>
-        <DataCity city={city} setIMG={setIMG} />
+      <div key={props.city} className="col-sm" id="city">
+        <span>{props.city}</span>
+        <DataCity data_city={props.city} setIMG={setIMG} />
       </div>
     </div>
   );

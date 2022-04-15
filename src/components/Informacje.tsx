@@ -1,11 +1,11 @@
-const Inf = ({temp, windy}) => {
+import React from "react"
+type Props = {temp: number, windy: string}
+const Inf = (props: Props) => {
     return ( 
     <div className="col-sm">
-        <spam key={temp}>
-          {temp + " \xB0C"}
+          {props.temp + " \xB0C"}
           <br />
-          { windy + "km/h"}
-        </spam>
+          { props.windy + "km/h"}
         </div>
         )
     
