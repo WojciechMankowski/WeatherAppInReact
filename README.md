@@ -1,5 +1,7 @@
 # The weather app in React
 
+# The effect of the project can be ![see here](https://wojciechmankowski.github.io/WeatherAppInReact/capitals)
+
 ![page preview](./page%20preview.gif)
 
 ## About the project
